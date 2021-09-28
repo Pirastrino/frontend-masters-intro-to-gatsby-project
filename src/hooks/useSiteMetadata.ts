@@ -6,10 +6,10 @@ const useSiteMetadata = () => {
       query SiteMetadata {
         site {
           siteMetadata {
+            url
             title
             description
             image
-            siteUrl
           }
         }
       }

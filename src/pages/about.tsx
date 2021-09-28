@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link, PageProps } from 'gatsby';
-import { Seo } from '../components';
+import { Layout } from '../components/Layout';
+import { useSiteMetadata } from '../hooks';
 
-const App: React.FC<PageProps> = () => {
+const About: React.FC = () => {
+  const data = useSiteMetadata();
+
   return (
-    <>
-      <Seo title="About" description="About this page" />
-      <main>
-        <h1>About Page</h1>
-        <Link to="/">Back to home</Link>
-      </main>
-    </>
+    // TODO: Find better solution then data!
+    <Layout {...data!}>
+      <h1>About Page</h1>
+    </Layout>
   );
 };
 
-export default App;
+export default About;

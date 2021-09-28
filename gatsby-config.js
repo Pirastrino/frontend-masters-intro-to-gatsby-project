@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://yourdomain.tld',
+    url: 'https://yourdomain.tld',
     title: 'Frontend Masters Intro to Gatsby',
     description: 'Frontend Masters Intro to Gatsby course projects',
     image:

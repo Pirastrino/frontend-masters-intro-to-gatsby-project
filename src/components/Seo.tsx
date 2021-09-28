@@ -2,23 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from '../hooks';
 
-type Props = {
-  title?: string;
-  description?: string;
-  image?: string;
-  url?: string;
-};
-
-const Seo: React.FC<Props> = (props) => {
+const Seo: React.FC<GatsbyTypes.SiteSiteMetadata> = (props) => {
   const defaults = useSiteMetadata();
 
   const title = props.title || defaults?.title;
   const description = props.description || defaults?.description;
   const image = new URL(
     props.image || defaults?.image || '',
-    defaults?.siteUrl,
+    defaults?.url,
   ).toString();
-  const url = new URL(props.url || '/', defaults?.siteUrl).toString();
+  const url = new URL(props.url || '/', defaults?.url).toString();
 
   return (
     <Helmet>

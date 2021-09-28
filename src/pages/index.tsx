@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Seo } from '../components';
+import { Layout } from '../components/Layout';
+import { useSiteMetadata } from '../hooks';
 
 const App: React.FC = () => {
+  const data = useSiteMetadata();
+
   return (
-    <>
-      <Seo />
-      <main>
-        <h1>Hello Frontend Masters</h1>
-        <Link to="/about">About</Link>
-      </main>
-    </>
+    // TODO: Find better solution then data!
+    <Layout {...data!}>
+      <h1>Hello Frontend Masters</h1>
+    </Layout>
   );
 };
 
